@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<tomee>
+    <Deployments dir="apps" />
+    <Resource id="DemoDS" type="javax.sql.DataSource">
+        jdbcDriver      = org.hsqldb.jdbcDriver
+        jdbcUrl         = jdbc:hsqldb:mem:deltaenterprise
+        jtaManaged      = true
+        LogSql          = true
+    </Resource>
+    
+    <JndiProvider id="DeltaContext" type="javax.naming.InitialContext">
+        java.naming.factory.initial = org.apache.openejb.core.LocalInitialContextFactory
+    </JndiProvider>
+    <JndiProvider id="DeltaAdminContext" type="javax.naming.InitialContext">
+        java.naming.factory.initial = org.apache.openejb.core.LocalInitialContextFactory
+    </JndiProvider>
+</tomee>

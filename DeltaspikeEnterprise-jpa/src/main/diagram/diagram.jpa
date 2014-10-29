@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings persistenceUnitName="DemoPU" id="_14145269730001" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd" xmlns:ns4="http://nbmodeler.java.net" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <jpa:package>org.waastad.deltaspikeenterprise.jpa.entity</jpa:package>
+    <jpa:entity class="Person" visibile="true" minimized="false" id="_1414526976436">
+        <jpa:attributes>
+            <jpa:id name="id" attribute-type="Long" visibile="true" id="_14145269831255">
+                <jpa:column unique="false" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+            <jpa:basic name="name" attribute-type="String" visibile="true" id="_14145269915336">
+                <jpa:column unique="false" nullable="true" insertable="true" updatable="true" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many name="petCollection" target-entity="Pet" collection-type="java.util.Collection" connected-entity-id="_1414526999360" visibile="true" id="_141452702407310">
+                <jpa:join-table/>
+            </jpa:one-to-many>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity class="Pet" visibile="true" minimized="false" id="_1414526999360">
+        <jpa:attributes>
+            <jpa:id name="id" attribute-type="Long" visibile="true" id="_14145270091338">
+                <jpa:column unique="false" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+            <jpa:basic name="name" attribute-type="String" visibile="true" id="_14145270168299">
+                <jpa:column unique="false" nullable="true" insertable="true" updatable="true" length="255"/>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:diagram id="_14145269730002">
+        <plane elementRef="_14145269730001" id="_14145269730003_p">
+            <shape elementRef="_1414526976436" id="_1414526976436_gui">
+                <Bounds x="126.0" y="93.0" width="146.0" height="118.0"/>
+            </shape>
+            <shape elementRef="_1414526999360" id="_1414526999360_gui">
+                <Bounds x="380.0" y="93.0" width="128.0" height="86.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>
